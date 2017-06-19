@@ -11,47 +11,14 @@ header-include:
 	- \usepackage{fontspec}
 	- \setsansfont[BoldFont = {Fira Sans Medium}]{Fira Sans}
 	- \setmonofont{Fira Mono}
+        - \usepackage{amsmath}
 ---
-<!---
-The problem of reproducibility for Imaging genetics
-======================================================
-
-Jean-Baptiste Poline  
----------------------
-
-Henry Wheeler Brain Imaging Center, 
-Helen Wills Neuroscience Institute, 
-University of California Berkeley
-
-Soon: McGill, Montreal Neurological Institute, Canada
-
-begin{frame}
-   \maketitle
-end{frame}
-	- begin{frame}
-	-   \maketitle
-	- end{frame}
-	
-	- \title[Short title]{Long Title}
-	- \subtitle{Subtitle}
-	- \author[Short Name (U ABC)]{Author 1\\Institute 1 \and Author 2\\Institute 2 \and Author 3\\Institute 3}
-	- \date[Dec 2015]{December 2015}
-title: The problem of reproducibility for Imaging genetics
-subtitle: something
-date: \small June 25 2017
-author: JB Poline \newline
-	\small affiliation
-	- \author[Short Name (U ABC)]{Author 1\\Institute 1 \and Author 2\\Institute 2 \and Author 3\\Institute 3}
-
-	- \titlepage
--->
 A short history of imaging genetics - the reproducibility view
 ======================================================
 
 - An historical perspective
-- Some context
-- Some practical examples 
-- The future
+- Some practical examples : How do I compute ... ?
+- What will we need in the future
 
 The imaging genetic studies
 ===================================
@@ -60,9 +27,9 @@ The imaging genetic studies
 - GWAS, small then large Ns
 - Genome-wide-Brain-wide
 - Multivariate analyses
-- Heritability and genetic correlation 
+- Heritability (and genetic correlation)
 - Networks 
-- More interpretation 
+- Interpretation 
 
 Some first studies: small Ns
 ==============================
@@ -72,8 +39,7 @@ Some first studies: small Ns
 $\vspace{-0.10cm}$
 
 * How do we compute the effect size ? 
-    - we have: the means, the standard deviations, and the Ns. 
-
+    - we know: the means, the standard deviations, and the Ns. 
 
 Computing effect size
 ========================
@@ -98,21 +64,27 @@ Computing Effect size: practice
 
 * First, compute the standard deviation of the data from the $\textrm{SDM}$ 
 
+    - get $\sigma$ from $\textrm{SDM}$ : $\sigma = \sqrt{14-1}\textrm{SDM}$
+    - Combine the $\sigma$ to have one estimation across the groups
+        - formula easy to recompute or find
     - $\sigma = \sqrt(14-1)\textrm{SDM}$, $d = \frac{m_1 - m_2}{\sigma} = 1.05$ 
 \pause
-\vspace{.5cm}
+\vspace{.4cm}
     - What is the percentage of variance explained ? 
 \pause
-\vspace{.5cm}
+\vspace{.4cm}
+    - Write the estimated model: $Y = [1 \ldots 1]^t [m_1-m_2] + \textrm{residual}$
+    - Compute the total sum of square, then the proportion: 
+\pause
+\vspace{.2cm}
     - \Large{$V_e = \frac{(n_1 + n_2)(m_1-m_2)^2}{n_1 s_1^2 + n_2 s_2^2 + (n_1 + n_2)(m_1-m_2)^2} > 40\%$}
-
 
 Multiple hypothesis: the curse of GWAS--wise...
 ======================================================
 
 ![Shen et al., 2010](./images/gwas-right-hypo-GM-N=733-shen-2010.png){ height=200px }
 
-    - See also Hibar et al., Stein et al.,  
+    - See also Stein et al., 2010, Hibar et al., 2011, 
 
 Computing effect size in imaging genetics (2)
 ===============================================
@@ -122,7 +94,7 @@ Computing effect size in imaging genetics (2)
 \pause
 \item N = 733 subjects,  considered a large study for imaging, but a very small one for genome wide association. 
 \pause
-\item only APOE gene confirmed, p =  6.63e-10: reaches GWAS significance level of 5.10-8
+\item only APOE gene confirmed, p =  6.63e-10: reaches GWAS significance level of 5.e-8
 \pause
 \item Question: How would you compute the effect size for APOE ? 
    \begin{itemize}
@@ -131,15 +103,18 @@ Computing effect size in imaging genetics (2)
    \pause
    \item  From Z score to Cohen's d ?  6.064/sqrt(733) = 0.224
    \end{itemize}
+\pause
+\item Question: what is the power for p=5.e-8 and d=0.22, N=733? 
 \end{itemize}
 
 Multivariate approaches 1 
 ======================================================
 
-![J. Liu et al](./images/multivariate-snp-fMRI.png){ height=200px }
+![J. Liu et al, 2009](./images/multivariate-snp-fMRI.png){ height=200px }
+
+* Review: Calhoun et al., 2009. Application to Schizophrenia.
 
 <!-- J. Liu et al., ICA guided Schizophrenia -->
-
 
 Multivariate approaches 2
 ======================================================
@@ -148,10 +123,20 @@ Multivariate approaches 2
 ![Vounou et al, 2010, LeFloch et al., 2012](./images/imaging-genetics-multivariate.png){ height=200px }
 
 
+Multivariate analyses: what do you get 
+======================================================
+
+![Vounou et al, 2010, LeFloch et al., 2012](./images/lefloch_2012_sPLS_results.png){ height=200px }
+
+* Then: issues of interpretation - and statistics needed to determine which region/voxel and which SNP/gene can be reported
+
 Heritability : more constraints - more interpretable
 ======================================================
 
+* Definition (simple): percentage of variance due to genetic
+
 ![Toro et al, 2014](./images/toro-gcta-heritability.png){ height=200px }
+
 
 Networks
 ======================================================
@@ -160,27 +145,26 @@ Networks
 
 * See also Siver et al., 2012
 
-Interpretation 
+Interpretation / Validation
 ======================================================
 
-![\  ](./images/richiardi-2015-connectivity.png) 
+![Richiardi et al, 2015](./images/richiardi-2015-connectivity.png){ height=150px }
 
-* Richiardi 2015: Resting state networks in fMRI related to Allen Brain 
+* Resting state networks in fMRI related to Allen Brain 
 	- "Validation" on SNP / fMRI  
 	- "Validation" on the mouse data
 
-What is specific to Imaging Genetics
-=======================================
+A few specificities of Imaging Genetics
+========================================
 
-- Combinaison of imaging and of genetics issues ("AND" problem) 
-- The combination of having to get very large number of subjects for GWAS and not being able to get them in imaging
+- Combinaison of imaging and of genetics issues (the "AND" problem) 
+- Large number of subjects is necessary for GWAS and but too costly to scan  
 - The multiple comparison issues
-- The "trendiness" of the field
 - The flexibility of analyses / exploration
+- The "trendiness" of the field
 - The capacity to "rationalize findings" 
     - noise in brain images is always interpretable
     - genes are always interpretable
-
 
 Conclusion 1: Ioannidis again
 ======================================================
@@ -204,44 +188,56 @@ $\vspace{-1.2cm}$
 ![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
 
 
+Effect size and reproducibility?
+==========================================
+
+\begin{itemize}
+\item Effect size in imaging genetics:
+    \begin{itemize}
+    \item BDNF and hippocampal volume: genuine effect or winners curse? d=0.12, p=0.02, Molendijk (2012)
+    \item Stein et al, 2012: marker is associated with 0.58\% of intracranial volume per risk allele 
+    \item Flint 2014: Effect size of intermediate phenotype not much greater than others 
+    \item For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5\%, 0.1-0.3\% for protein or serum concentration 
+    \end{itemize}
+
+\pause
+\item Unlikely effect sizes
+    \begin{itemize}
+    \item COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
+    \item HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40\% of phenotypic variance. d=1.05
+    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
+    \end{itemize}
+\end{itemize}
+
+
 Conclusion 3: What's next   
 ======================================================
 
 * Greater interpretability 
 	- include pathways / biological information
 	- heritable phenotypes
-	- analyzing other existing databases
+	- analyzing other existing databases / datasets (eg ABI) 
+	- more complex methods (multivariate) 
 
-> * More documented data needed for 
+* More documented data needed for 
 	- power
 	- interpretability
 
-> * Move from p-values to prediction ?
+* Move from p-values to prediction ?
 
 Acknowledgements  
 ======================================================
 
 * Berkeley: M. D'Esposito, M. Brett, S. Van der Walt, J.Millman
-* Pasteur: R. Toro, G. Dumas, T. Bourgeron, A. Beggliato
-* Neurospin: B. Thirion, G. Varauquaux, V. Frouin
+* Pasteur: R. Toro, G. Dumas, T. Bourgeron, A. Beggiato
+* Neurospin: B. Thirion, G. Varauquaux, V. Frouin, others
+
+
+Thank you for your attention - Questions ?
+======================================================
 
 More material
 ======================================================
-
-
-Effect size and reproducibility?
-==========================================
-
-* Effect size in imaging genetics:
-    - BDNF and hippocampal volume: genuine effect or winners curse? d=0.12, p=0.02, Molendijk (2012)
-    - Stein et al, 2012: marker is associated with 0.58% of intracranial volume per risk allele 
-    - Flint 2014: Effect size of intermediate phenotype not much greater than others 
-    - For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5%, 0.1-0.3% for protein or serum concentration 
-
-> * Unlikely effect sizes
-    - COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
-    - HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40% of phenotypic variance. d=1.05
-    - KCTD8 / cortical area: Paus 2012: 21% of phenotypic variance (250 subjects), d=1.03.
 
 
 What are the solutions: 
@@ -317,7 +313,6 @@ Studies of low power inflate the detected effect (1)
 
 ![Button et al. NRN, 2013](./images/butt_fig5.pdf)
 
-
 The power issue
 ===================
 
@@ -325,7 +320,6 @@ What is the estimated power in common meta analyses?
 -----------------------------------------------------
 
 ![Button et al. NRN, 2013](./images/butt_fig2.pdf)
-
 
 Power Calculator with 
 ======================
