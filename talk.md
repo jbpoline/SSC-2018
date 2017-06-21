@@ -16,9 +16,45 @@ header-include:
 A short history of imaging genetics - the reproducibility view
 ======================================================
 
+- Motivations
+- Quick background on genetic variations
 - An historical perspective
 - Some practical examples : How do I compute ... ?
 - What will we need in the future
+
+Motivations
+=============================
+- Geneticists: understand the genes 
+- Neuroscientists: understand the brain
+- Psychologists: understand the behaviour
+- Clinicians: 
+	- Personalized medicine
+	- Predictive medicine
+- No great model system for human brain!
+
+Motivations: illustration
+=============================
+
+![Meyer-Lindenberg, 2006](./images/meyer-lindenberg-imag-genetic.png){ height=240px }
+
+<!--
+Motivations behind imaging genetics are also really important - what biological questions can we answer: mechanism of action for genes involved in neuropsychiatric diseases, genes influencing the expansion of the human brain as compared to other species, genes influencing function of the human brain (no great way to study this other than neuroimaging - model systems like mouse do not have human capabilities, humans not an easy experimental system)
+-->
+
+Genetic variations: 
+===========================
+
+![Scherer 2007, Credit S. Cichon](./images/genetic-variations.png){ height=240px }
+
+Genetic variation: SNP
+========================
+
+![Credit S. Cichon](./images/SNP.png){ height=240px }
+
+Genetic variation: CNV
+========================
+
+![Credit S. Cichon](./images/CNV.png){ height=240px }
 
 The imaging genetic studies
 ===================================
@@ -27,8 +63,8 @@ The imaging genetic studies
 - GWAS, small then large Ns
 - Genome-wide-Brain-wide
 - Multivariate analyses
-- Heritability (and genetic correlation)
-- Networks 
+- [Heritability] 
+- Networks
 - Interpretation 
 
 Some first studies: small Ns
@@ -84,7 +120,7 @@ Multiple hypothesis: the curse of GWAS--wise...
 
 ![Shen et al., 2010](./images/gwas-right-hypo-GM-N=733-shen-2010.png){ height=200px }
 
-    - See also Stein et al., 2010, Hibar et al., 2011, 
+- \small{See also Stein et al., 2010 (SNP X Voxel), Hibar et al., 2011, (Gene X Voxel) }
 
 Computing effect size in imaging genetics (2)
 ===============================================
@@ -107,10 +143,42 @@ Computing effect size in imaging genetics (2)
 \item Question: what is the power for p=5.e-8 and d=0.22, N=733? 
 \end{itemize}
 
+
+Effect size in imaging genetics
+=================================
+
+\begin{itemize}
+    \item BDNF and hippocampal volume: genuine effect or winners curse? d=0.12, p=0.02, Molendijk (2012)
+\pause
+    \item Stein et al, 2012: marker is associated with 0.58\% of intracranial volume per risk allele 
+\pause
+    \item Flint 2014: Effect size of intermediate phenotype not much greater than others 
+\pause
+    \item For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5\%, 0.1-0.3\% for protein or serum concentration 
+\end{itemize}
+
+Some example of SNP effect size
+=================================
+
+![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=200px }
+
+<!-- - \small{Franke et al., 2015 } -->
+
+Effect size and reproducibility?
+==========================================
+
+\begin{itemize}
+    \item HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40\% of phenotypic variance. d=1.05
+    \item COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
+    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
+\end{itemize}
+
 Multivariate approaches 1 
 ======================================================
 
-![J. Liu et al, 2009](./images/multivariate-snp-fMRI.png){ height=200px }
+* Why ? Effect of several genes - Effect on several regions
+
+![J. Liu et al, 2009](./images/multivariate-snp-fMRI.png){ height=170px }
 
 * Review: Calhoun et al., 2009. Application to Schizophrenia.
 
@@ -143,8 +211,9 @@ Networks
 
 ![Network SNP/Diffusion Chiang et al 2012](./images/network-diffusion-chiang-2012.png){ height=200px }
 
-* See also Siver et al., 2012
+* See also Silver et al., 2012, Richiardi 2015
 
+<!--
 Interpretation / Validation
 ======================================================
 
@@ -153,6 +222,8 @@ Interpretation / Validation
 * Resting state networks in fMRI related to Allen Brain 
 	- "Validation" on SNP / fMRI  
 	- "Validation" on the mouse data
+
+-->
 
 A few specificities of Imaging Genetics
 ========================================
@@ -188,26 +259,6 @@ $\vspace{-1.2cm}$
 ![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
 
 
-Effect size and reproducibility?
-==========================================
-
-\begin{itemize}
-\item Effect size in imaging genetics:
-    \begin{itemize}
-    \item BDNF and hippocampal volume: genuine effect or winners curse? d=0.12, p=0.02, Molendijk (2012)
-    \item Stein et al, 2012: marker is associated with 0.58\% of intracranial volume per risk allele 
-    \item Flint 2014: Effect size of intermediate phenotype not much greater than others 
-    \item For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5\%, 0.1-0.3\% for protein or serum concentration 
-    \end{itemize}
-
-\pause
-\item Unlikely effect sizes
-    \begin{itemize}
-    \item COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
-    \item HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40\% of phenotypic variance. d=1.05
-    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
-    \end{itemize}
-\end{itemize}
 
 
 Conclusion 3: What's next   
