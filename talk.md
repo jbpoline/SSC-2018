@@ -1,8 +1,8 @@
 ---
-title: A Brief History of Imaging Genetics 
-shortitle:  Imaging Genetics
+title: Multivariate associations in imaging genetics and related reproducibility issues
+shortitle:  Imaging Genetics Reproducibility
 subtitle: A reproducibility perspective 
-date:  June 25 2017
+date:  June 25 2018
 author: JB Poline \newline
 institute: UC Berkeley, McGill	
 
@@ -13,23 +13,44 @@ header-include:
 	- \setmonofont{Fira Mono}
         - \usepackage{amsmath}
 ---
-A short history of imaging genetics - the reproducibility view
+\ 
 ======================================================
 
-- Motivations
-- Quick background on genetic variations
-- An historical perspective
-- Some practical examples : How do I compute ... ?
-- What will we need in the future
+![\ ](./images/first-slide.png){ height=260px }
 
-Motivations
-=============================
+Multivariate associations in imaging genetics and related reproducibility issues
+=================================================================================
+- Motivations: why imaging genetics
+\pause
+- issues of reproducibility? 
+	- in general (life science, epidemiology)
+	- in imaging genetics (imaging, genetics, imaging genetics?)
+\pause
+- Motivations: why multivariate methods 
+\pause
+- The issues: 
+	- curse of dimensionality with multiple testing 
+	- interpretations
+	- reproducibility 
+\pause
+- Solutions:
+	- technical
+	- social
+\pause
+- Conclusion
+
+Motivations : why imaging genetics
+====================================
 - Geneticists: understand the genes 
+\pause
 - Neuroscientists: understand the brain
+\pause
 - Psychologists: understand the behaviour
+\pause
 - Clinicians: 
 	- Personalized medicine
 	- Predictive medicine
+\pause
 - No great model system for human brain!
 
 Motivations: illustration
@@ -41,6 +62,181 @@ Motivations: illustration
 Motivations behind imaging genetics are also really important - what biological questions can we answer: mechanism of action for genes involved in neuropsychiatric diseases, genes influencing the expansion of the human brain as compared to other species, genes influencing function of the human brain (no great way to study this other than neuroimaging - model systems like mouse do not have human capabilities, humans not an easy experimental system)
 -->
 
+Issues of reproducibility in sciences 
+=================================================================================
+![Stodden, 2014](./images/credibility-crisis.png){ height=240px }
+
+Issues of reproducibility in *life sciences*
+=================================================================================
+![Potti versus Baggerley and Combes](./images/potti.png){ height=240px }
+
+Issues of reproducibility in *imaging* genetics  
+=================================================================================
+![Kattuwal, 2016, f.in. Brain Imaging Methods](./images/imaging-reproducibility-SPM-FSL-FS.png){ height=240px }
+
+Issues of reproducibility in imaging *genetics*
+=================================================================================
+![Capacity to justify](./images/genetic-just-so-stories.png){ height=240px }
+
+Issues of reproducibility in *imaging genetics*
+=================================================================================
+
+![Molendijk, 2012, BDNF and hippocampal volume](./images/molendijk_2012_f4.pdf) 
+
+$\vspace{-1.2cm}$
+
+![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
+
+
+<!--
+- Hariri issue 
+- sample size issue (Mufano, Ioannidis, ...)
+- Jason Stein (1 slide : literature)
+- False positives in neuroimaging genetics using voxel-based morphometry data (Silver et al., 2010) 
+- Carp : method vibration workflow
+- Nichols : method vibration 2
+- FLS/FreeSurfer/SPM
+-->
+
+Effect size and reproducibility?
+==========================================
+
+\begin{itemize}
+    \item HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40\% of phenotypic variance. d=1.05
+    \item COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
+    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
+    \item Compare with effect size of APOE on hipocampal volume: Cohen's d=.22
+\end{itemize}
+
+Some example of SNP effect size
+=================================
+
+![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=240px }
+
+<!-- - \small{Franke et al., 2015 } -->
+
+Motivations: why multivariate methods - some examples
+=================================================================================
+- Power issues and the curse of multiple testing 
+- Better interpretability ? 
+- Better inclusion of prior information?
+
+<!--
+Example of MV methods in imaging genetics : X4 slides
+=================================================================================
+- Lefloch et al
+- Vounou, Tom Nichols
+- Giovani Montana
+- Identification of gene pathways implicated in Alzheimer's disease using longitudinal imaging phenotypes with sparse regression (Silver et al., )
+-->
+
+Multivariate approaches  
+======================================================
+
+* Effect of several genes - Effect on several regions
+
+![J. Liu et al, 2009](./images/multivariate-snp-fMRI.png){ height=170px }
+
+* Review: Calhoun et al., 2009. Application to Schizophrenia.
+
+<!-- J. Liu et al., ICA guided Schizophrenia -->
+
+
+Multivariate approaches: methods 
+======================================================
+<!-- $\vspace{-1.2cm}$ -->
+
+![Vounou et al, 2010, LeFloch et al., 2012](./images/imaging-genetics-multivariate.png){ height=240px }
+
+
+
+Multivariate approaches: cross-validation and permutations
+===========================================================
+
+![Computationally intensive](./images/cross-validation.png){ height=240px }
+
+Multivariate approaches: methods 
+======================================================
+<!-- $\vspace{-1.2cm}$ -->
+
+![LeFloch et al., 2012](./images/mv-methods-table-results.png){ height=120px }
+
+$\vspace{-1.2cm}$
+
+![LeFloch et al., 2012](./images/table-fsPLS-results.png){ height=120px }
+
+
+Multivariate analyses: results 
+======================================================
+
+![Vounou et al, 2010, LeFloch et al., 2012](./images/lefloch_2012_sPLS_results.png){ height=240px }
+
+* Then: issues of interpretation - and statistics needed to determine which region/voxel and which SNP/gene can be reported
+
+
+Review and challenges in statistical methods for imaging genetics
+=================================================================================
+
+- Pluta et al, 2018
+- issues are : 
+	- dimensionality
+	- ?
+
+Issues / lack of reproductibility with MV methods (1)
+=======================================================
+- choice of methods still poorly justified
+	- practitionners are selecting tools on the shelf rather than designing something for their question
+	- Can also be influenced by the latest innovation read in NIPS/elsewhere
+- choice of parameters such as number of dimensions, sparsity, etc makes for a large number of possible results. Validation is generally within a dataset 
+- interpretation are done through "networks" but these may be artificial through mathematical constraints (eg PCA) which will depend on the signal to noise ratio
+- imaging phenotypes are not always reliable
+	- carp et al
+	- FSL / SPM / ... 
+
+Issues / lack of reproductibility with MV methods (2)
+=======================================================
+- true replication quasi inexistant datasets are very very sparse 
+	- accessibility of datasets are poor - consortia are not dissiminating data
+- populations even from the same ethnicity are not often comparable
+	- change in age, gender ratio, SSE, ... all affecting phenotypes
+- no consensus for the causes: See Bogdan et al, (2016 BPsy) 
+- complexity issue
+	- data suggest that subcortical volume abnormalities observed in schizophrenia may instead arise from rare mutations (e.g., de novo), schizophrenia itself (103), its treatment (104,105), associated risk factors, and potential gene 3 environment interactions (106). 
+- Software availability : cf Stodden 2011 Nips experiment 
+
+Solutions: What's next   
+======================================================
+
+* More documented data needed for 
+	- power
+	- interpretability
+
+* Greater interpretability 
+	- include pathways / biological information
+	- heritable phenotypes
+	- analyzing other existing databases / datasets (eg ABI) 
+	- better adapted methods (multivariate) 
+
+* Move from p-values to prediction ?
+
+
+Conclusion: Ionanidis is very likely right   
+======================================================
+
+
+Acknowledgements  
+======================================================
+
+* Berkeley: M. D'Esposito, M. Brett, S. Van der Walt, J.Millman
+* Pasteur: R. Toro, G. Dumas, T. Bourgeron, A. Beggiato
+* Neurospin: B. Thirion, G. Varauquaux, V. Frouin, others
+
+
+
+
+
+
+<!--
 Genetic variations: 
 ===========================
 
@@ -70,12 +266,11 @@ The imaging genetic studies
 Some first studies: small Ns
 ==============================
 
-* Example of Hariri 2002: In Fig 3, Authors report $m_1 = .28, m_2 = .03, \textrm{SDM}_1 = 0.08, \textrm{SDM}_2 = 0.05, N_1 = N_2 = 14$ $\vspace{-0.20cm}$
-    - ![Hariri et al. Science, 2002](./images/hariri_fig3.pdf)
+![Hariri et al. Science, 2002](./images/hariri.png){ height=200px }
 $\vspace{-0.10cm}$
 
-* How do we compute the effect size ? 
-    - we know: the means, the standard deviations, and the Ns. 
+* Authors report $m_1 = .28, m_2 = .03, \textrm{SDM}_1 = 0.08, \textrm{SDM}_2 = 0.05, N_1 = N_2 = 14$ 
+* How do we compute the effect size ?  
 
 Computing effect size
 ========================
@@ -100,17 +295,17 @@ Computing Effect size: practice
 
 * First, compute the standard deviation of the data from the $\textrm{SDM}$ 
 
-    - get $\sigma$ from $\textrm{SDM}$ : $\sigma = \sqrt{14-1}\textrm{SDM}$
+    - get $\sigma$ from $\textrm{SDM}$ : $\sigma = \sqrt{14-1}\times\textrm{SDM}$
     - Combine the $\sigma$ to have one estimation across the groups
         - formula easy to recompute or find
-    - $\sigma = \sqrt(14-1)\textrm{SDM}$, $d = \frac{m_1 - m_2}{\sigma} = 1.05$ 
+    - $\sigma = \sqrt{14-1}\times\textrm{SDM}$, $d = \frac{m_1 - m_2}{\sigma} = 1.05$ 
 \pause
 \vspace{.4cm}
     - What is the percentage of variance explained ? 
 \pause
 \vspace{.4cm}
     - Write the estimated model: $Y = [1 \ldots 1]^t [m_1-m_2] + \textrm{residual}$
-    - Compute the total sum of square, then the proportion: 
+    - Compute the total sum of square $Y^t Y$, then the proportion: 
 \pause
 \vspace{.2cm}
     - \Large{$V_e = \frac{(n_1 + n_2)(m_1-m_2)^2}{n_1 s_1^2 + n_2 s_2^2 + (n_1 + n_2)(m_1-m_2)^2} > 40\%$}
@@ -135,7 +330,7 @@ Computing effect size in imaging genetics (2)
 \item Question: How would you compute the effect size for APOE ? 
    \begin{itemize}
    \pause
-   \item  What is the Z score for p =  6.63e-10 ? : n01.isf(6.63e-10) = 6.064
+   \item  What is the Z score for p =  6.63e-10 ? : p-to-Z(6.63e-10) = 6.064
    \pause
    \item  From Z score to Cohen's d ?  6.064/sqrt(733) = 0.224
    \end{itemize}
@@ -148,19 +343,21 @@ Effect size in imaging genetics
 =================================
 
 \begin{itemize}
-    \item BDNF and hippocampal volume: genuine effect or winners curse? d=0.12, p=0.02, Molendijk (2012)
+    \item BDNF val/met and hippocampal volume: genuine effect or winners curse? d=0.13, p=0.02, Molendijk (2012)
 \pause
-    \item Stein et al, 2012: marker is associated with 0.58\% of intracranial volume per risk allele 
+    \item Stein et al, 2012: marker is associated with 0.58\% of intracranial volume per risk allele
 \pause
-    \item Flint 2014: Effect size of intermediate phenotype not much greater than others 
+    \item Flint 2014: Effect size of intermediate phenotype not much greater than others !
 \pause
-    \item For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5\%, 0.1-0.3\% for protein or serum concentration 
+    \item For psychiatric diseases: mean OR is 1.15, QT: variance explained by 1 locus << 0.5\% and 0.1-0.3\% for protein or serum concentration 
+\pause
+    \item Franke et al., 2015: volume of hippocampus: -23 mm3 per SNP allele (~0.7\%) and OR=0.94 for schizophrenia vs control.
 \end{itemize}
 
 Some example of SNP effect size
 =================================
 
-![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=200px }
+![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=230px }
 
 <!-- - \small{Franke et al., 2015 } -->
 
@@ -211,7 +408,7 @@ Networks
 
 ![Network SNP/Diffusion Chiang et al 2012](./images/network-diffusion-chiang-2012.png){ height=200px }
 
-* See also Silver et al., 2012, Richiardi 2015
+* See also Silver et al., 2012: Pathways, Richiardi 2015
 
 <!--
 Interpretation / Validation
@@ -228,7 +425,7 @@ Interpretation / Validation
 A few specificities of Imaging Genetics
 ========================================
 
-- Combinaison of imaging and of genetics issues (the "AND" problem) 
+- Combinaison of imaging and of genetics potential pre-processing issues  
 - Large number of subjects is necessary for GWAS and but too costly to scan  
 - The multiple comparison issues
 - The flexibility of analyses / exploration
@@ -261,140 +458,9 @@ $\vspace{-1.2cm}$
 
 
 
-Conclusion 3: What's next   
-======================================================
-
-* Greater interpretability 
-	- include pathways / biological information
-	- heritable phenotypes
-	- analyzing other existing databases / datasets (eg ABI) 
-	- more complex methods (multivariate) 
-
-* More documented data needed for 
-	- power
-	- interpretability
-
-* Move from p-values to prediction ?
-
-Acknowledgements  
-======================================================
-
-* Berkeley: M. D'Esposito, M. Brett, S. Van der Walt, J.Millman
-* Pasteur: R. Toro, G. Dumas, T. Bourgeron, A. Beggiato
-* Neurospin: B. Thirion, G. Varauquaux, V. Frouin, others
 
 
 Thank you for your attention - Questions ?
 ======================================================
 
-More material
-======================================================
-
-
-What are the solutions: 
-=========================
-
-- Pre-register hypotheses 
-    - More hypotheses 
-    - Candidate versus GWAS: cf Flint & Mufano, 2012
-
-> - Statistics: 
-    - What is your likely effect size ?
-    - Power analyses with the smallest expected effect size (cost does not enter in this calculation) 
-    - Take robust statistical tools
-    - Meta analysis - cf Enigma / Replication whenever possible 
-    - Effect size variation estimation (bootstrapping)
-
-The power issue
-===================
-What exactly is power ?
------------------------
-![Power: $\large{W = 1-\beta}$ Here W=77%](./images/what_is_pw.pdf)
-
-Cohen's d and relation with n :
----------------------------------
-$\hspace{3cm} d = \frac{\bar{x_1} - \bar{x_2}}{\sigma} = \frac{\mu}{\sigma} \hspace{2cm}$ \large{$Z = \frac{\mu\sqrt{n}}{\sigma} = d \sqrt{n}$}
-
-
-The power issue
-===================
-- Studies of low power have low probability of detecting an effect (indeed!)
-- Studies of low power have low positive predictive value: $PPV = P(H1 True | Detection)$
-- Studies of low power are likely to show inflated effect size 
-
-The power issue
-===================
-
-- $PPV = P(H1 True | Detection) = \frac{W \, P_1}{\alpha \, P_0 + W \, P_1}$
-
-- If we have 4/5 that H0 is true, and 1/5 that H1 true, with 30% power: PPV = 60%.
-
-
--------------  ----------- ----------  --------
- P1/P0 =0.25   power=0.10,  alpha=0.05 PPV=0.33  
- P1/P0 =0.25   power=0.30,  alpha=0.05 PPV=0.60  
- P1/P0 =0.25   power=0.50,  alpha=0.05 PPV=0.71  
- P1/P0 =0.25   power=0.70,  alpha=0.05 PPV=0.78  
--------------  ----------- ----------  --------
-
-The power issue
-===================
-What happens with more stringent $\alpha$?
--------------------------------------------------
-
-![higher type I error threshold to account for MC](./images/pw_with_mc.pdf)
-
-* effect on power: power goes down
-* effect on PPV: PPV goes up 
-* effect on estimated effect size: size bias: goes up
-
-The power issue
-===================
-
-Studies of low power inflate the detected effect (2)
-----------------------------------------------------
-
-![Repeating experiments: estimated effects are above t05 line, leading to a biased estimation compared to true simulated effect.](./images/power_true.pdf)
-
-The power issue
-===================
-
-Studies of low power inflate the detected effect (1)
------------------------------------------------------
-
-![Button et al. NRN, 2013](./images/butt_fig5.pdf)
-
-The power issue
-===================
-
-What is the estimated power in common meta analyses? 
------------------------------------------------------
-
-![Button et al. NRN, 2013](./images/butt_fig2.pdf)
-
-Power Calculator with 
-======================
-
-* Purcell et al. “Genetic Power Calculator” Bioinformatics (2003).
-
-$\vspace{-0.5cm}$
-
-![http://pngu.mgh.harvard.edu/~purcell/gpc/](./images/gene_pw_calc.pdf)
-
-$\vspace{-0.5cm}$
-
-> * http://www.sph.umich.edu/csg/abecasis/cats/
-
-CaTS-text --additive --risk 1.3 --pisample .95 --pimarkers 1. --frequency .3 --case 1067 --control 1067 --alpha 0.00000001 : yields For a one-stage study 0.314.
-
-
-Recall-by-Genotype and intermediate phenotype
-===============================================
-
-* Flint et al., Assessing the utility of intermediate phenotype, Trends in Neurosciences, 2014.
-
-$\vspace{-0.5cm}$
-
-![Recall by Genotype: Genotypic assignment vs randomisation assignment](./images/flint_2014_fig1_recall.pdf)
-
-
+-->
