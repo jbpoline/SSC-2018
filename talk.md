@@ -13,28 +13,29 @@ header-include:
 	- \setmonofont{Fira Mono}
         - \usepackage{amsmath}
 ---
-\ 
-======================================================
-
-![\ ](./images/first-slide.png){ height=260px }
 
 Multivariate associations in imaging genetics and related reproducibility issues
 =================================================================================
 - Motivations: why imaging genetics
 \pause
 - issues of reproducibility? 
-	- in general (life science, epidemiology)
+	- in general in science ?
+	- in life science / psychology ? 
 	- in imaging genetics (imaging, genetics, imaging genetics?)
 \pause
 - Motivations: why multivariate methods 
+	- curse of dimensionality with multiple testing 
+- What methods are used ?
+	- an example
 \pause
 - The issues: 
-	- curse of dimensionality with multiple testing 
-	- interpretations
 	- reproducibility 
+		- brain phenotypes 
+		- literature priors
+	- interpretations
 \pause
 - Solutions:
-	- technical
+	- technical: machine learning ?
 	- social
 \pause
 - Conclusion
@@ -70,56 +71,6 @@ Issues of reproducibility in *life sciences*
 =================================================================================
 ![Potti versus Baggerley and Combes](./images/potti.png){ height=240px }
 
-Issues of reproducibility in *imaging* genetics  
-=================================================================================
-![Kattuwal, 2016, f.in. Brain Imaging Methods](./images/imaging-reproducibility-SPM-FSL-FS.png){ height=240px }
-
-Issues of reproducibility in imaging *genetics*
-=================================================================================
-![Capacity to justify](./images/genetic-just-so-stories.png){ height=240px }
-
-Issues of reproducibility in *imaging genetics*
-=================================================================================
-
-![Molendijk, 2012, BDNF and hippocampal volume](./images/molendijk_2012_f4.pdf) 
-
-$\vspace{-1.2cm}$
-
-![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
-
-
-<!--
-- Hariri issue 
-- sample size issue (Mufano, Ioannidis, ...)
-- Jason Stein (1 slide : literature)
-- False positives in neuroimaging genetics using voxel-based morphometry data (Silver et al., 2010) 
-- Carp : method vibration workflow
-- Nichols : method vibration 2
-- FLS/FreeSurfer/SPM
--->
-
-Effect size and reproducibility?
-==========================================
-
-\begin{itemize}
-    \item HTTLPR and amygdala: Hariri 2002: p-value implies that locus explain > 40\% of phenotypic variance. d=1.05
-    \item COMT and DLPFC: meta analysis : d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
-    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
-    \item Compare with effect size of APOE on hipocampal volume: Cohen's d=.22
-\end{itemize}
-
-Some example of SNP effect size
-=================================
-
-![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=240px }
-
-<!-- - \small{Franke et al., 2015 } -->
-
-Motivations: why multivariate methods - some examples
-=================================================================================
-- Power issues and the curse of multiple testing 
-- Better interpretability ? 
-- Better inclusion of prior information?
 
 <!--
 Example of MV methods in imaging genetics : X4 slides
@@ -129,6 +80,12 @@ Example of MV methods in imaging genetics : X4 slides
 - Giovani Montana
 - Identification of gene pathways implicated in Alzheimer's disease using longitudinal imaging phenotypes with sparse regression (Silver et al., )
 -->
+
+Motivations: why multivariate methods - some examples
+=================================================================================
+- Power issues and the curse of multiple testing 
+- Better interpretability ? 
+- Better inclusion of prior information?
 
 Multivariate approaches  
 ======================================================
@@ -141,7 +98,6 @@ Multivariate approaches
 
 <!-- J. Liu et al., ICA guided Schizophrenia -->
 
-
 Multivariate approaches: methods 
 ======================================================
 <!-- $\vspace{-1.2cm}$ -->
@@ -149,21 +105,20 @@ Multivariate approaches: methods
 ![Vounou et al, 2010, LeFloch et al., 2012](./images/imaging-genetics-multivariate.png){ height=240px }
 
 
-
 Multivariate approaches: cross-validation and permutations
 ===========================================================
 
 ![Computationally intensive](./images/cross-validation.png){ height=240px }
 
-Multivariate approaches: methods 
+Multivariate approaches 
 ======================================================
 <!-- $\vspace{-1.2cm}$ -->
 
-![LeFloch et al., 2012](./images/mv-methods-table-results.png){ height=120px }
+![LeFloch et al., 2012](./images/mv-methods-table-results.png){ height=110px }
 
-$\vspace{-1.2cm}$
+$\vspace{-1.0cm}$
 
-![LeFloch et al., 2012](./images/table-fsPLS-results.png){ height=120px }
+[LeFloch et al., 2012](./images/table-fsPLS-results.png){ height=110px }
 
 
 Multivariate analyses: results 
@@ -171,58 +126,176 @@ Multivariate analyses: results
 
 ![Vounou et al, 2010, LeFloch et al., 2012](./images/lefloch_2012_sPLS_results.png){ height=240px }
 
-* Then: issues of interpretation - and statistics needed to determine which region/voxel and which SNP/gene can be reported
 
+The issue of reproducibility in imaging genetics
+=================================================================================
+
+Issues of reproducibility in *imaging* genetics  
+=================================================================================
+<!--  FSL / SPM / ... -->
+
+![Kattuwal, 2016, f.in. Brain Imaging Methods](./images/imaging-reproducibility-SPM-FSL-FS.png){ height=240px }
+
+Issues of reproducibility in *imaging* genetics  
+=================================================================================
+
+![J. Carp, 2016](./images/carp-flexible-analyses.png){ height=240px }
+
+<!-- - Nichols : method vibration 2 -->
+
+Issues of reproducibility in imaging *genetics*
+=================================================================================
+
+![Capacity to justify](./images/genetic-just-so-stories.png){ height=240px }
+
+Issues of reproducibility in *imaging genetics*
+=================================================================================
+
+![Molendijk, 2012, BDNF and hippocampal volume](./images/molendijk_2012_f4.pdf) 
+
+$\vspace{-1.2cm}$
+
+![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
+
+Some example of SNP effect size
+=================================
+
+![Franke et al., 2015](./images/franke-2015-effect-size.png){ height=240px }
+
+<!-- - \small{Franke et al., 2015 } -->
 
 Review and challenges in statistical methods for imaging genetics
 =================================================================================
 
-- Pluta et al, 2018
+    "False positives, spurious results, and underpowered studies 
+    are serious issues when considering the reliability and 
+    reproducibility of imaging genetics results." 
+
+    _Pluta et al, 2018_, Stat. challenge in connectome genetics
+
 - issues are : 
-	- dimensionality
-	- ?
+	- high dimensionality
+	- "sample sizes for these studies are typically around 1000 subjects"
 
-Issues / lack of reproductibility with MV methods (1)
+- _Increased transparency of methods and enhanced data sharing will further
+  enhance replicability_ Carter, Bio. Psy., 2017
+
+Issues / lack of reproductibility with MV methods
 =======================================================
-- choice of methods still poorly justified
-	- practitionners are selecting tools on the shelf rather than designing something for their question
-	- Can also be influenced by the latest innovation read in NIPS/elsewhere
-- choice of parameters such as number of dimensions, sparsity, etc makes for a large number of possible results. Validation is generally within a dataset 
-- interpretation are done through "networks" but these may be artificial through mathematical constraints (eg PCA) which will depend on the signal to noise ratio
-- imaging phenotypes are not always reliable
-	- carp et al
-	- FSL / SPM / ... 
 
-Issues / lack of reproductibility with MV methods (2)
+-  "networks" but these may be artificial
+  through mathematical constraints (eg PCA) : interpretation issue 
+
+- a p-value on the MV association but report region/voxel and SNP/gene:
+  interpretation/statistical issue
+
+- "Networks" variation with signal to noise ratio / sample size
+
+- choice of parameters such as number of dimensions, sparsity, etc makes for a
+  large number of possible results
+	- within a dataset optimization
+
+- choice of methods still poorly justified
+	- selecting tools on the shelf rather than design for a question
+	- influenced by the latest innovation 
+
+
+Issues / lack of reproductibility with MV methods (3)
 =======================================================
 - true replication quasi inexistant datasets are very very sparse 
-	- accessibility of datasets are poor - consortia are not dissiminating data
+	- accessibility of datasets are poor 
+	- many consortia are not dissiminating data
+
 - populations even from the same ethnicity are not often comparable
 	- change in age, gender ratio, SSE, ... all affecting phenotypes
-- no consensus for the causes: See Bogdan et al, (2016 BPsy) 
-- complexity issue
-	- data suggest that subcortical volume abnormalities observed in schizophrenia may instead arise from rare mutations (e.g., de novo), schizophrenia itself (103), its treatment (104,105), associated risk factors, and potential gene 3 environment interactions (106). 
-- Software availability : cf Stodden 2011 Nips experiment 
 
-Solutions: What's next   
+- no consensus for the causes: See Bogdan et al, (2016 Bio. Psy.)
+
+- complexity issue: Carter, Bio-Psy, 2017
+	- data suggest that subcortical volume abnormalities observed in
+	  schizophrenia may instead arise from rare mutations (e.g., de novo),
+	  schizophrenia itself (103), its treatment (104,105), associated risk factors,
+	  and potential gene by environment interactions (106). 
+
+Cross validation failure
+=======================================================
+
+![Varoquaux, 2017](./images/accuracy-prediction-sample-size.png)
+
+
+Cross validation failure
+=======================================================
+
+![Varoquaux, 2017](./images/accuracy-prediction-methods.png)
+
+- SVM or logistic regression, optionally with feature selection of 100, 200,
+  500, 1 000, or 2 000 voxels and smoothing at 2, 4, or 6 mm
+
+- Haxby dataset, inverted face and house labels
+
+Issues / lack of reproductibility with MV methods (1.b)
+=======================================================
+* analysis of the Acute Leukemia Dataset in "Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring” (1999)
+
+![Stodden, Golub dataset study](./images/stodden-golub-classif-method-variation.png){ height=140px }
+
+Issues / lack of reproductibility with MV methods (1.c)
+=======================================================
+- Many points of variability 
+	- starting dataset 
+	- preprocessing steps
+	- feature selection methods 
+	- algorithm choice 
+	- tuning of algorithm 
+	- tuning of parameters: CV choice
+
+
+Solutions: What's next (1) 
 ======================================================
 
 * More documented data needed for 
-	- power
+	- power 
 	- interpretability
+	- generalizability
+
+* More information on the algorithms is needed:
+	- Clairebout's principle 
+	- software availability : cf Stodden 2011 Nips experiment 
+	- software testing
 
 * Greater interpretability 
-	- include pathways / biological information
+	- include pathways, brain networks, or biological information
 	- heritable phenotypes
-	- analyzing other existing databases / datasets (eg ABI) 
-	- better adapted methods (multivariate) 
 
-* Move from p-values to prediction ?
+Solutions: What's next (1) 
+======================================================
+
+* More vibration studies
+	- on the imaging phenotype measurement 
+	- on the methods parameter 
+	- on the models when no strong justification is available
+
+* How do we accumulate confirmation results obtained with MV analyses?
+	- meta analyses harder 
+
+Solutions: publish data and code 
+======================================================
+
+
+![Stodden, publish](./images/stodden-data-code-worflow-publish.png){ height=140px }
 
 
 Conclusion: Ionanidis is very likely right   
 ======================================================
 
+* Young fields tend to have less stringent criteria 
+* Ioannidis 2005: When are results more likely to be false? 
+    - The smaller the studies ...
+    - The smaller the effect size ...
+    - The larger the number of tests ...
+    - The more flexibility in the analyses
+    - The more trendy ...
+    - The more financial interest ...
 
 Acknowledgements  
 ======================================================
@@ -232,10 +305,38 @@ Acknowledgements
 * Neurospin: B. Thirion, G. Varauquaux, V. Frouin, others
 
 
+Many results are still to be validated
+==========================================
+
+\begin{itemize}
+    \item HTTLPR and amygdala: Hariri 2002: from p-value : > 40\% of phenotypic variance. d=1.05
+    \item COMT and DLPFC: meta analysis: d = 0.55,  most studies N < 62 subjects (Meir, 2010) 
+    \item KCTD8 / cortical area: Paus 2012: 21\% of phenotypic variance (250 subjects), d=1.03.
+    \item APOE on hipocampal volume: Shen 2011: Cohen's d=.22
+\end{itemize}
 
 
+Other thoughts:
+====================================================================
+* Derek Hilbar / Jason Stein: no results for voxelwise / genomewise 
+* Pathways 
 
-
+# reworking the plan
+- img genetics motivation
+- reproducibility issues : in general
+- The curse of multiple comparison : MV as a possible solution
+- MV in img genetics: some classical techniques (vounou, etc)
+- the problem with these techniques
+	- issues with brain phenotype
+	- issues of SNP reproducibility
+	- stuff that is over optimized for a particular dataset
+- how about ML techniques? 
+	- Stoddent example 
+	- find Gael stuff on small samples
+- solutions?
+	- publish more data
+	- publish the code : example of stodden
+ 
 <!--
 Genetic variations: 
 ===========================
@@ -456,11 +557,8 @@ $\vspace{-1.2cm}$
 ![Mier, 2009, COMT & DLPFC](./images/mier_2009_f4.pdf)
 
 
-
-
-
-
 Thank you for your attention - Questions ?
 ======================================================
 
--->
+<!-- ====================================================== ![\ ](./images/first-slide.png){ height=260px } -->
+
