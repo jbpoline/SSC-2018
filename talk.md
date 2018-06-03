@@ -87,6 +87,14 @@ Motivations: why multivariate methods - some examples
 - Better interpretability ? 
 - Better inclusion of prior information?
 
+Multiple hypothesis: the curse of GWAS--wise...
+======================================================
+
+![Shen et al., 2010](./images/gwas-right-hypo-GM-N=733-shen-2010.png){ height=200px }
+
+- \small{See also Stein et al., 2010 (SNP X Voxel), Hibar et al., 2011, (Gene X Voxel) }
+
+
 Multivariate approaches  
 ======================================================
 
